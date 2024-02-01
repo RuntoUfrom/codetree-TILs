@@ -1,5 +1,5 @@
 #include <iostream>
-using namespacae std;
+using namespace std;
 int main() {
     int a = 26;
     int b = 5;
