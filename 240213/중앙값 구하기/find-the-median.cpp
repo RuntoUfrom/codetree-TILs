@@ -4,10 +4,10 @@ int main() {
     int a,b,c;
     cin>>a>>b>>c;
     int mid;
-    if(a>=b&&a<=c){
+    if((a>=b&&a<=c)||(a>=c&&a<=b)){
         mid=a;
     }
-    else if(b>=a&&b<=c){
+    else if((b>=a&&b<=c)||(b<=a&&b>=c)){
         mid = b;
     }
     else{
