@@ -3,16 +3,18 @@ using namespace std;
 int main() {
     int n;
     cin>>n;
-    int tmp = 1;
+    int tmp = 0;
     int cnt = 1;
 
     while(true){
-        if(n/cnt<1){
-            break;
-        }
+        
         n = n/cnt;
         cnt++;
+        tmp++;
+        if(n<1){
+            break;
+        }
     }
-    cout<<cnt;
+    cout<<tmp;
     return 0;
 }
