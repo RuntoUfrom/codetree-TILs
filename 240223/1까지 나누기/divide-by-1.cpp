@@ -7,11 +7,10 @@ int main() {
     int cnt = 1;
 
     while(true){
-        
         n = n/cnt;
         cnt++;
         tmp++;
-        if(n<1){
+        if(n<=1){
             break;
         }
     }
