@@ -4,10 +4,10 @@ int main() {
     int a,b;
     cin>>a>>b;
     int remain = 0;
-    int cnt[b-1];
+    int cnt[b];
     int ans = 0;
     
-    for(int i = 0; i<b-1; i++){
+    for(int i = 0; i<b; i++){
         cnt[i] = 0;
     }
     while(a>1){
