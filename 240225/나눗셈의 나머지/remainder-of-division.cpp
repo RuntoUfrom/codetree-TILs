@@ -8,7 +8,7 @@ int main() {
     int ans = 0;
 
     while(a>1){
-        remain = a%b;
+       // remain = a%b;
         cnt[a%b]++;
         a = a/b;
     }
