@@ -11,6 +11,7 @@ int main() {
             cnt++;
             if(cnt==3){
                 cout<<i+1;
+                break;
             }
         }
     }
