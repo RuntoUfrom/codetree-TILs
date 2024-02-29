@@ -9,7 +9,7 @@ int main() {
         cin>>arr[i];
     }
    min = arr[1]-arr[0];
-    for(int i = 1; i<n; i++){
+    for(int i = 2; i<n; i++){
       if(min>(arr[i]-arr[i-1])){
         min = arr[i]-arr[i-1];
       }
