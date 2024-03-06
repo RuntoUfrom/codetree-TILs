@@ -1,19 +1,18 @@
 #include <iostream>
-#include <vector>
 using namespace std;
-int main() {
-    vector < vector <int >> v2(4, vector<int>(4, 0));
-    int tmp;
+int main(){
+    int arr2[4][4];
     int sum = 0;
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            cin >> tmp;
-            if (i >= j) {
-                sum += tmp;
-            }
+
+    for(int i = 0;i<4; i++){
+        for(int j=  0; j<4; j++){
+            cin>>arr2[i][j];
         }
     }
-    cout << sum;
-
-    return 0;
+    for(int i = 0; i<4; i++){
+        for(int j = 0; j<=i; j++){
+            sum+=arr2[i][j];
+        }
+    }
+    cout<<sum;
 }
