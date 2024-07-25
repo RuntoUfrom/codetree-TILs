@@ -8,6 +8,7 @@ bool isLeaf(int n){
         }
         return true;
     }
+    return false;
 }
 int main() {
     int y;
