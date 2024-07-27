@@ -8,7 +8,7 @@ bool isDay(int m, int d){
             return true;
             break;
         case 2: 
-            if(d<=30)
+            if(d<=29)
             return true;
             break;
         case 3: 
