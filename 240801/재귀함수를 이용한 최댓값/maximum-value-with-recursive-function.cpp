@@ -1,5 +1,4 @@
 #include <iostream>
-#include<vector>
 using namespace std;
 
 int maxn = 0;
@@ -19,7 +18,11 @@ int calc(int cnt){
 int main() {
     int n;
     cin>>n;
+    if(n==1){
+        int tmp;
+        cin>>tmp;
+    cout<<tmp;
+    }
     cout<<calc(n);
-    
     return 0;
 }
