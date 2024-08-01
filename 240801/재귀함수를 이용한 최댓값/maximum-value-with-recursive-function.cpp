@@ -23,6 +23,7 @@ int main() {
         cin>>tmp;
     cout<<tmp;
     }
-    cout<<calc(n);
+    else{
+        cout<<calc(n);}
     return 0;
 }
