@@ -12,7 +12,7 @@ int calcEven(int n){
     if(n==2){
         return 2;
     }
-    return calc(n-2) + n;
+    return calcEven(n-2) + n;
 }
 int main() {
     int n;
