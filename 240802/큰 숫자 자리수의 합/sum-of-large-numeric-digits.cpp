@@ -1,15 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int sum = 0;
 int calc(int n){
     if(n<10){
-        sum+=n;
-        return sum;
+        return n;
     }
-    sum +=(n%10);
-    return calc(n/10);
-
+    return calc(n/10) + n%10 ;
 }
 
 int main() {
