@@ -1,24 +1,31 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-int ans = 0;
-int GCD(int a, int b){
-    return b? GCD(b,a%b):a;
-}
+#define MAX_N 10
 
-int LCM(int n, int m){
-    return (n*m)/GCD(n,m);
+int n;
+int arr[MAX_N+1];
+
+int LCM(int a, int b){
+    int gcd = 1;
+    for(int i = 1; i<= min(a,b); i++){
+        if(a%i==0 &&b%i==0){
+            gcd = i;
+        }
+    }
+    return a*b/gcd;
 }
-int main() {
-    int n;
+int GetLCMALL(int index){
+    if(index==1){
+        return arr[1];
+    }
+    return LCM(GetLCMALL(index-1),arr[index]);
+}
+int main(){
     cin>>n;
-    int arr[10];
-    for(int i = 0; i<n; i++){
+    for(int i = 1;i<=n; i++){
         cin>>arr[i];
     }
-    for(int i = 0;i<n-1; i++){
-       arr[i+1] = LCM(arr[i],arr[i+1]);
-    }
-    cout<<arr[n-1];
-    return 0;
+    cout<<GetLCMALL(n);
 }
