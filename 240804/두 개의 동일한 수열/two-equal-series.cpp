@@ -23,7 +23,7 @@ int main() {
         }
     }
     if(ans==false){
-        cout<<"NO";
+        cout<<"No";
     }
     else{
         cout<<"Yes";
