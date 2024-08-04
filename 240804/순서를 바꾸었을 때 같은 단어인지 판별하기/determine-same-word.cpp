@@ -20,10 +20,12 @@ bool IsPossible(string str1, string str2){
 int main() {
     string str1;
     string str2;
-   if(IsPossible(str1,str2)){
+    cin>>str1;
+    cin>>str2;
+   if(IsPossible(str1,str2)==true){
         cout<<"Yes";
    }
-   else{
+   else {
         cout<<"No";
    }
 
