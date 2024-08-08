@@ -17,9 +17,9 @@ class Student{
 };
 
 bool cmp(const Student&a, const Student &b){
-    if(a.height!=b.height)[
+    if(a.height!=b.height){
         return a.height>b.height;
-    ]
+    }
     if(a.weight!= b.weight){
         return a.weight>b.weight;
     }
