@@ -17,23 +17,13 @@ class Student{
 };
 
 bool cmp(const Student&a, const Student &b){
-    //키가 더 큰 학생이 앞에 와야 합니다.
-    if(a.height>b.height){
-        return true;
+    if(a.height!=b.height)[
+        return a.height>b.height;
+    ]
+    if(a.weight!= b.weight){
+        return a.weight>b.weight;
     }
-    else if(a.height ==b.height){
-        if(a.weight>b.weight){
-            return true;
-        }
-        else if(a.weight==b.weight){
-            if(a.idx<b.idx){
-                return true;
-            }
-        }
-    }
-    //키가 동일하다면, 몸무게가 더 큰 학생이 앞에 와야 합니다.
-    return false;
-    //키와 몸무게가 동일하다면, 번호가 작은 학생이 앞에 와야 합니다.
+    return a.idx<b.idx;
 }
 int main() {
     int n;
