@@ -34,6 +34,8 @@ bool cmpheight(const Member &a, const Member &b){
 
 void PrintInfo(Member arr[]){
     for(int i = 0; i<NUM;i++){
+        cout<<fixed;
+        cout.precision(1);
         cout<<arr[i].name<<" "<<arr[i].height<<" "<<arr[i].weight<<endl;
     }
 }
