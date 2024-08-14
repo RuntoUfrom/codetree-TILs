@@ -4,7 +4,7 @@ using namespace std;
 
 int month_day[13] = {0,31,29,31,30,31,30,31,31,30,31,30,31};
 
-int NumOfDays(int m, int d) { // 1월 1일 부터 흐른 날짜를 계산하는 함수
+int NumOfDays(int m, int d) {
     int tmpsum = 0;
     for(int i = 1; i <= m - 1; i++) {
         tmpsum += month_day[i];
@@ -17,28 +17,38 @@ int main() {
     int m1, d1, m2, d2;
     string day;
     int ansday_cnt = 0;
-    int daycnt = 0;
 
     cin >> m1 >> d1 >> m2 >> d2;
     cin >> day;
 
-    int diff = NumOfDays(m2, d2) - NumOfDays(m1, d1);
+    // Calculate the number of days since January 1, 2024 for both dates
+    int start_diff = NumOfDays(m1, d1) - 1; // Days from Jan 1, 2024 to (m1, d1)
+    int end_diff = NumOfDays(m2, d2) - 1;   // Days from Jan 1, 2024 to (m2, d2)
+    int diff = end_diff - start_diff;
 
-    // Determine the initial day of the week for m1, d1
-    int startDay = 0; // Assuming Jan 1st is a Monday (adjust as needed)
-    if (day == "Mon") startDay = 0;
-    else if (day == "Tue") startDay = 1;
-    else if (day == "Wed") startDay = 2;
-    else if (day == "Thu") startDay = 3;
-    else if (day == "Fri") startDay = 4;
-    else if (day == "Sat") startDay = 5;
-    else if (day == "Sun") startDay = 6;
+    // Determine the starting day of the week index based on the start date
+    int startDayIndex = start_diff % 7;  // Monday = 0, Tuesday = 1, ..., Sunday = 6
 
-    // Calculate number of complete weeks
+    // Calculate the number of complete weeks within the range
     ansday_cnt = diff / 7;
 
-    // Calculate the remainder days and check if an extra day fits
-    if (diff % 7 >= (7 - startDay) % 7) {
+    // Check if the target day occurs in the remaining days
+    int remainder = diff % 7;
+    int dayOffset = (startDayIndex + remainder) % 7;
+
+    if (day == "Mon" && dayOffset >= 0) {
+        ansday_cnt++;
+    } else if (day == "Tue" && dayOffset >=1) {
+        ansday_cnt++;
+    } else if (day == "Wed" && dayOffset >= 2) {
+        ansday_cnt++;
+    } else if (day == "Thu" && dayOffset >= 3) {
+        ansday_cnt++;
+    } else if (day == "Fri" && dayOffset >= 4) {
+        ansday_cnt++;
+    } else if (day == "Sat" && dayOffset >= 5) {
+        ansday_cnt++;
+    } else if (day == "Sun" && dayOffset >= 6) {
         ansday_cnt++;
     }
 
